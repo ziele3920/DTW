@@ -13,9 +13,13 @@ for ia = 1:length(a)
         end
     end
 end
-D = sum(amb);
-Dist = sqrt(dtw(a,b));
+%D = sum(amb);
+%Dist = sqrt(dtw(a,b));
 ED = sqrt(sum((a-b).^2));
 
 [Dist, D, k, w, rw, tw] = dtw2(a,b,1);
 LW = length(rw);
+tw_norm=(0:LW-1)/LW;
+figure; plot(tw_norm, rw, 'b');
+hold on; plot(t, a, 'r');
+hold off;
